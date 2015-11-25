@@ -21,15 +21,15 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.contentSecurityPolicy = {
-      'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self'",
-      'connect-src': "'self' http://localhost:4200",
-      'img-src': "'self'",
-      'style-src': "'self'",
-      'media-src': "'self'"
-    };
-  }
+     'default-src': "'none'",
+     'script-src': "'self'",
+     'font-src': "'self'",
+     'connect-src': "'self' http://2f9a786a.ngrok.io/",
+     'img-src': "'self'",
+     'style-src': "'self' 'unsafe-inline",
+     'media-src': "'self'"
+   };
+ }
 
 
   if (environment === 'test') {
