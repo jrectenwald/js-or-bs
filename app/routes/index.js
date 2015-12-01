@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     var libraries = this.store.findAll('library')
     var fakeLibraries = this.store.findAll('fakeLibrary')
 
-    return {libraries: libraries, fakeLibraries: fakeLibraries, libraryToggle: false}
+    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, libraryToggle: false})
    }
 });
 

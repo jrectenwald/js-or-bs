@@ -1,16 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  randomLibrary: Ember.computed('libraryToggle', 'libraries', function(){
-     var libraries = this.model.libraries;
+  randomLibrary: Ember.computed('libraryToggle', function(){
+     var libraries = this.model.libraries.toArray();
     debugger
-     var randLibraryIndex = Math.floor(Math.random() * (this.libraries.length - 1) + 1);
-     return libraries[randLibraryIndex];
+     var randomLibraryIndex = Math.floor(Math.random() * (libraries.length - 1) + 1);
+     return libraries[randomLibraryIndex];
   }).property(),
-  randomFakeLibrary: Ember.computed('libraryToggle', 'fakeLibraries', function(){
-    var fakeLibraries = this.model.fakeLibraries;
-    var randomdFakeLibraryIndex = Math.floor(Math.random() * (this.fakeLibraries.length - 1) + 1);
-    return randomFakeLibrary = fakeLibraries[randFakeLibraryIndex];
+  randomFakeLibrary: Ember.computed('libraryToggle', function(){
+    var fakeLibraries = this.model.fakeLibraries.toArray();
+    var randomdFakeLibraryIndex = Math.floor(Math.random() * (fakeLibraries.length - 1) + 1);
+    return fakeLibraries[randomdFakeLibraryIndex];
   }).property()
   // actions: {
 
