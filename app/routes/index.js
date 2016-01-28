@@ -4,9 +4,17 @@ export default Ember.Route.extend({
   model(){
     var libraries = this.store.findAll('library')
     var fakeLibraries = this.store.findAll('fakeLibrary')
-
-    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, libraryToggle: false})
-   }
+    var message = Ember.Object.create({text: "Pick a library"});
+    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, libraryToggle: false, message: message})
+   },
+  actions: {
+    submitLibrary(library, message) {
+      debugger;
+      if(library == "library") {
+        this.model.message = "test";
+      }
+    }
+  }
 });
 
 
