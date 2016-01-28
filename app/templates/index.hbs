@@ -1,8 +1,9 @@
-{{model.message}}
+{{model.message.text}}
 
+<br>
 
-<button type="button" name="library" {{action "submitLibrary" "library"}}> Library: {{randomLibrary.name}}</button>
+<button type="button" name="library" {{action "submitLibrary" "library" model.message }}> Library: {{randomLibrary.name}}</button>
 
-<button type="button" name="fakeLibrary" {{action "submitLibrary" "fakeLibrary"}}>Fake Library: {{randomFakeLibrary.name}}</button>
+<button type="button" name="fakeLibrary" {{action "submitLibrary" "fakeLibrary" model.message }}>Fake Library: {{randomFakeLibrary.name}}</button>
 
 

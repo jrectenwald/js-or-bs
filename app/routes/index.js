@@ -1,20 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(){
+  model() {
     var libraries = this.store.findAll('library')
     var fakeLibraries = this.store.findAll('fakeLibrary')
     var message = Ember.Object.create({text: "Pick a library"});
-    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, libraryToggle: false, message: message})
-   },
-  actions: {
-    submitLibrary(library, message) {
-      debugger;
-      if(library == "library") {
-        this.model.message = "test";
-      }
-    }
+    // var libraryToggle = Ember.Object.create({value: false});
+    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, message: message})
   }
+  // actions: {
+  //   submitLibrary(library, message, libraryToggle) {
+  //     libraryToggle.toggleProperty("value");
+  //     console.log(libraryToggle.get("value"));
+  //     if(library == "library") {
+  //       message.set("text", "That is correct!");
+  //     } else if(library == "fakeLibrary"){
+  //       message.set("text", "Nope!");
+  //     } else {
+  //       message.set("text", "Winter is coming.");
+  //     }
+  //   }
+  // }
 });
 
 
