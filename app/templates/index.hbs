@@ -1,9 +1,13 @@
+
 {{model.message.text}}
 
 <br>
 
-<button type="button" name="library" {{action "submitLibrary" "library" model.message }}> Library: {{randomLibrary.name}}</button>
+<button class="btn primary library-btn" type="button" name="library" {{action "submitLibrary" "library" model.message }}> Is it this?????: {{randomLibrary.name}}</button>
 
-<button type="button" name="fakeLibrary" {{action "submitLibrary" "fakeLibrary" model.message }}>Fake Library: {{randomFakeLibrary.name}}</button>
+<button class="btn primary library-btn" type="button" name="fakeLibrary" {{action "submitLibrary" "fakeLibrary" model.message }}>Or this?????: {{randomFakeLibrary.name}}</button>
 
+<br>
+<br>
 
+{{library-button libraryType=library model=model libraryObject=randomFakeLibrary libraryToggle=libraryToggle}}
