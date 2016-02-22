@@ -6,22 +6,22 @@ export default Ember.Controller.extend({
     value: Math.random()
   }),
   score: Ember.Object.create({right:0, wrong:0}),
-  
+
   libraryObject1: function() {
     var num = this.get("randomNum.value");
-    if (num > .5){
-      return this.get("randomLibrary")
+    if (num > 0.5){
+      return this.get("randomLibrary");
     }else{
-      return this.get("randomFakeLibrary")
+      return this.get("randomFakeLibrary");
     }
   }.property("libraryToggle.value"),
 
   libraryObject2: function(){
     var num = this.get("randomNum.value");
-    if (num > .5){
-      return this.get("randomFakeLibrary")
+    if (num > 0.5){
+      return this.get("randomFakeLibrary");
     }else{
-      return this.get("randomLibrary")
+      return this.get("randomLibrary");
     }
   }.property("libraryToggle.value"),
 
@@ -42,5 +42,5 @@ export default Ember.Controller.extend({
     return this.get("randomNum.value");
   }.property("libraryToggle.value")
 
-  
+
 });

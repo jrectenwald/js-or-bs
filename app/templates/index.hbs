@@ -1,11 +1,27 @@
 
-{{model.message.text}}
+
 
 {{getRandomNumber.value}}
+<div class='row'>
+  <div class="jumbotron">
+    <h2>Pick the real JS library</h2>
+    <h2>Score</h2>
+    <p>Correct: {{score.right}} | Incorrect: {{score.wrong}}</p>
+  </div>
+</div>
 
-Correct: {{score.right}}
-Incorrect: {{score.wrong}}
-
-{{library-button libraryType=libraryObject1.libType model=model libraryObject=libraryObject1 libraryToggle=libraryToggle score=score}}
-
-{{library-button libraryType=libraryObject2.libType model=model libraryObject=libraryObject2 libraryToggle=libraryToggle score=score}}
+<div class='row'>
+  <div class='col-xs-2'></div>
+  <div class='col-xs-3'>
+    {{library-button libraryType=libraryObject1.libType model=model libraryObject=libraryObject1 libraryToggle=libraryToggle score=score}}
+  </div>
+  <div class='col-xs-2'>
+    <div class={{model.message.divClass}}>
+      {{model.message.text}}
+    </div>
+  </div>
+  <div class='col-xs-3'>
+    {{library-button libraryType=libraryObject2.libType model=model libraryObject=libraryObject2 libraryToggle=libraryToggle score=score}}
+  </div>
+  <div class='col-xs-2'></div>
+</div>

@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    var libraries = this.store.findAll('library')
-    var fakeLibraries = this.store.findAll('fakeLibrary')
-    var message = Ember.Object.create({text: "Pick a library"});
+    var libraries = this.store.findAll('library');
+    var fakeLibraries = this.store.findAll('fakeLibrary');
+    var message = Ember.Object.create({text: "Pick a library", divClass:"alert alert-dismissible alert-info"});
     // var libraryToggle = Ember.Object.create({value: false});
-    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, message: message})
+    return Ember.RSVP.hash({ libraries: libraries, fakeLibraries: fakeLibraries, message: message});
   }
   // actions: {
   //   submitLibrary(library, message, libraryToggle) {
@@ -51,4 +51,4 @@ export default Ember.Route.extend({
   //   })
 
   //   return {libraries: libraries, fakeLibraries: fakeLibraries, randomLibrary: randomLibrary, randomFakeLibrary: randomFakeLibrary}
-  // 
+  //
