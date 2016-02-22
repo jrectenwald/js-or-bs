@@ -24,7 +24,7 @@ module.exports = function(environment) {
      'default-src': "'none'",
      'script-src': "'self'",
      'font-src': "'self'",
-     'connect-src': "'self' http://2f9a786a.ngrok.io/",
+     'connect-src': "'self' https://js-or-bs-server.herokuapp.com",
      'img-src': "'self'",
      'style-src': "'self' 'unsafe-inline",
      'media-src': "'self'"

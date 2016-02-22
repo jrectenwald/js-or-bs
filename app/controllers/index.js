@@ -2,6 +2,29 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   libraryToggle: Ember.Object.create({value: false}),
+  randomNum: Ember.Object.create({
+    value: Math.random()
+  }),
+  score: Ember.Object.create({right:0, wrong:0}),
+  
+  libraryObject1: function() {
+    var num = this.get("randomNum.value");
+    if (num > .5){
+      return this.get("randomLibrary")
+    }else{
+      return this.get("randomFakeLibrary")
+    }
+  }.property("libraryToggle.value"),
+
+  libraryObject2: function(){
+    var num = this.get("randomNum.value");
+    if (num > .5){
+      return this.get("randomFakeLibrary")
+    }else{
+      return this.get("randomLibrary")
+    }
+  }.property("libraryToggle.value"),
+
   randomLibrary: function(){
      var libraries = this.model.libraries.toArray();
      var randomLibraryIndex = Math.floor(Math.random() * (libraries.length - 1) + 1);
@@ -13,17 +36,11 @@ export default Ember.Controller.extend({
     return fakeLibraries[randomdFakeLibraryIndex];
   }.property("libraryToggle.value"),
 
-  actions: {
-    submitLibrary(library, message) {
-      this.libraryToggle.toggleProperty("value");
-      if(library == "library") {
-        message.set("text", "That is correct!");
-      } else if(library == "fakeLibrary"){
-        message.set("text", "Nope!");
-      } else {
-        message.set("text", "Winter is coming.");
-      }
-    }
-  }
+  getRandomNumber: function(){
+    var random = Math.random();
+    this.set("randomNum.value", random);
+    return this.get("randomNum.value");
+  }.property("libraryToggle.value")
+
   
 });

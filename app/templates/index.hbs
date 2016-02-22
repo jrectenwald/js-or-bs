@@ -1,13 +1,11 @@
 
 {{model.message.text}}
 
-<br>
+{{getRandomNumber.value}}
 
-<button class="btn primary library-btn" type="button" name="library" {{action "submitLibrary" "library" model.message }}> Is it this?????: {{randomLibrary.name}}</button>
+Correct: {{score.right}}
+Incorrect: {{score.wrong}}
 
-<button class="btn primary library-btn" type="button" name="fakeLibrary" {{action "submitLibrary" "fakeLibrary" model.message }}>Or this?????: {{randomFakeLibrary.name}}</button>
+{{library-button libraryType=libraryObject1.libType model=model libraryObject=libraryObject1 libraryToggle=libraryToggle score=score}}
 
-<br>
-<br>
-
-{{library-button libraryType=library model=model libraryObject=randomFakeLibrary libraryToggle=libraryToggle}}
+{{library-button libraryType=libraryObject2.libType model=model libraryObject=libraryObject2 libraryToggle=libraryToggle score=score}}
